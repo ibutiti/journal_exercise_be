@@ -70,10 +70,12 @@ class JournalEntryController extends Controller
         $request->validate([
             'title'=> ['required', 'string'],
             'content' => ['required', 'string'],
+            'is_shared' => ['boolean'],
         ]);
 
         $journal_entry->title = $request->title;
         $journal_entry->content = $request->content;
+        $journal_entry->is_shared = $request->is_shared;
 
         $journal_entry->save();
 

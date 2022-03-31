@@ -12,16 +12,15 @@ class JournalEntry extends Model
     protected $content = 'content';
     protected $public_id = 'public_id';
     protected $user_id = 'user_id';
+    protected $is_shared = 'is_shared';
 
     protected $fillable = [
         'title',
         'content',
         'public_id',
-        'user_id'
+        'user_id',
+        'is_shared'
     ];
-    // protected $hidden = [
-    //     'user_id',
-    // ];
     public function user()
     {
         return $this->belongsTo(User::class);
